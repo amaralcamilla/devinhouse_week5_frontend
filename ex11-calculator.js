@@ -1,7 +1,7 @@
 //Leia em ordem os 18 passos para tornar a calculadora responsiva:
 
 class Calculadora { //1. Não há necessidade de constructor. Colocaremos get porque será uma propriedade (e não um método). Desta forma sempre retornará o valor atualizado. 
-    get #tela(){ //4. Colocamos como privado porque só a própria classe mexerá na tela.
+    get #tela(){ //4. Colocamos como privado '#' porque só a própria classe mexerá na tela.
         return document.querySelector('#result')
     }
 
