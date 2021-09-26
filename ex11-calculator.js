@@ -46,18 +46,3 @@ for (let botao of botoes) { //Faremos um for of para que a função preencherTel
 document.querySelector('#clear').addEventListener('click', function() {
     calculadora.resetar() //15. Não é possível chamar o nome da função direto. Se isto acontecesse, perderíamos o 'this.resetar()' e o 'this.preencherTela(resultado)'.
 })
-}
-//2. Instanciar objeto
-let calculadora = new Calculadora()
-//3. calculadora.tela    --> Quando digitar isto, retornará o que está lá em cima --> 'return document.querySelector('#result')'. Como é uma propriedade (e não um método), não colocamos () ao lado. Este comando só funcionaria se o get tela não fosse privado.
-
-let botoes = document.querySelectorAll('input[type=button]') //6. Para pegar apenas os inputs que são button (não pegará o input da tela/resultado, porque é input do tipo texto).
-for (let botao of botoes) {
-    botao.addEventListener('click', function(evento){  //7. Não é possível chamar a função direto pelo nome, tem que instanciar o objeto que foi instanciado ali em cima 'let calculadora = new Calculadora()'.
-        let elemento = evento.target 
-        calculadora.preencherTela(elemento.value) //8. Para pegar o valor dentro destes parênteses, é necessário ter um evento 'function(evento){'. Todos os inputs têm value.
-    })
-}
-document.querySelector('#clear').addEventListener('click', function() {
-    calculadora.resetar() //14. Não é possível chamar o nome da função direto. Se isto acontecesse, perderíamos o 'this.resetar()' e o 'this.preencherTela(resultado)'.
-})
